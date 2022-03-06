@@ -20,7 +20,6 @@ const App = () => {
 
     setMovies(data.Search);
 
-    console.log(isLoading);
     setIsLoading(false);
   };
 
@@ -54,17 +53,15 @@ const App = () => {
       </div>
 
       <div className="container">
-        {
-        isLoading === true
-        ? ( <ReactLoading /> )
-        : (movies?.length > 0 ? (
+        {isLoading === true ? (
+          <ReactLoading />
+        ) : movies?.length > 0 ? (
           movies.map((movie) => <MovieCard movie={movie} />)
         ) : (
           <div className="empty">
             <h2>No movies found</h2>
           </div>
-        ))
-        }
+        )}
       </div>
     </div>
   );

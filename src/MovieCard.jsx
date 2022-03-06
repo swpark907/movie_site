@@ -1,25 +1,25 @@
 import React from "react";
 
-const MovieCard = ({movie1}) => {
+const MovieCard = ({movie : {imbdID, Year, Type, Title, Poster} }) => {
   return (
-    <div className="movie">
+    <div className="movie" key = {imbdID}>
       <div>
-        <p>{movie1.Year}</p>
+        <p>{Year}</p>
       </div>
       <div>
         <img
           src={
-            movie1.Poster !== "N/A"
-              ? movie1.Poster
+            Poster !== "N/A"
+              ? Poster
               : "https://via.placeholder.com/400"
           }
-          alt={movie1.Title}
+          alt={Title}
         />
       </div>
 
       <div>
-        <span>{movie1.Type}</span>
-        <h3>{movie1.Title}</h3>
+        <span>{Type}</span>
+        <h3>{Title}</h3>
       </div>
     </div>
   );
